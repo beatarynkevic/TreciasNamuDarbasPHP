@@ -14,3 +14,8 @@ echo $text2;
 
 print_r($match);
 print_r($match2);
+echo '<br>';
+
+$str = "Visit Microsoft!";
+$pattern = "/microsoft/i"; //i is a modifier that makes the search case-insensitive.
+echo preg_replace($pattern, "W3Schools", $str);
