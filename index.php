@@ -79,6 +79,61 @@ for ($i = 0; $i <= $length; $i++) {
 
 <h2 style="color:#0075C4";>---------6 Uzduotis---------</h2>
 <?php
+//0 -yra herbas
+//1 -yra skaicius
+echo 'Monetos metimą stabdome iškritus herbui:';
+echo '<br>';
+
+$metimas = true;
+do {
+    $moneta = rand(0, 1);
+    ($moneta === 0) ? echo 'H' : echo 'S';
+    if($moneta === 0) {
+        break;
+    }
+} while (true);
+echo '<br>';
+echo 'Monetos metimą stabdome iškritus skaičiui:';
+echo '<br>';
+do {
+    $moneta = rand(0, 1);
+    ($moneta === 0) ? echo 'H' : echo 'S';
+    if($moneta === 1) {
+        break;
+    }
+} while (true);
+echo '<br>';
+echo 'Monetos metimą stabdome 3 kartus iškritus herbui:';
+echo '<br>';
+
+$count = 0;
+do {
+    $moneta = rand(0, 1);
+    ($moneta === 0) ? echo 'H' : echo 'S';
+    if ($moneta === 0) {
+        $count++;
+    }
+    if ($count === 3) {
+        break;
+    }
+}while(true);
+echo '<br>';
+echo 'Monetos metimą stabdome 3 kartus iš eilės iškritus herbui:';
+echo '<br>';
+
+$count = 0;
+do {
+    $moneta = rand(0, 1);
+    ($moneta === 0) ? echo 'H' : echo 'S';
+    if ($moneta === 0) {
+        $count++;
+    } else {
+        $count = 0;
+    }
+    if ($count === 3) {
+        break;
+    }
+}while(true);
 ?>
 
 <h2 style="color:#EFA00B";>---------7 Uzduotis---------</h2>
