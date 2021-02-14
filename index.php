@@ -361,3 +361,9 @@ while ($kalimas2)
 echo "1 sulindo: $dideliKiekSulindo1 mm, o smugiu: $dideliKiekSmugiu1 <br> 2 sulindo: $dideliKiekSulindo2 mm, o smugiu: $dideliKiekSmugiu2 <br> 3 sulindo: $dideliKiekSulindo3 mm,
  o smugiu: $dideliKiekSmugiu3 <br> 4 sulindo: $dideliKiekSulindo4 mm, o smugiu: $dideliKiekSmugiu4 <br> 5 sulindo: $dideliKiekSulindo5 mm, o smugiu: $dideliKiekSmugiu5";
 ?>
+
+<h2 style="color:#0075C4";>---------11 Uzduotis---------</h2>
+<?php
+
+
+?>
