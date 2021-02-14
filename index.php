@@ -87,7 +87,7 @@ echo '<br>';
 $metimas = true;
 do {
     $moneta = rand(0, 1);
-    ($moneta === 0) ? echo 'H' : echo 'S';
+    ($moneta === 0) ? print 'H' : print 'S';
     if($moneta === 0) {
         break;
     }
@@ -97,7 +97,7 @@ echo 'Monetos metimą stabdome iškritus skaičiui:';
 echo '<br>';
 do {
     $moneta = rand(0, 1);
-    ($moneta === 0) ? echo 'H' : echo 'S';
+    ($moneta === 0) ? print 'H' : print 'S';
     if($moneta === 1) {
         break;
     }
@@ -109,7 +109,7 @@ echo '<br>';
 $count = 0;
 do {
     $moneta = rand(0, 1);
-    ($moneta === 0) ? echo 'H' : echo 'S';
+    ($moneta === 0) ? print 'H' : print 'S';
     if ($moneta === 0) {
         $count++;
     }
@@ -124,7 +124,7 @@ echo '<br>';
 $count = 0;
 do {
     $moneta = rand(0, 1);
-    ($moneta === 0) ? echo 'H' : echo 'S';
+    ($moneta === 0) ? print 'H' : print 'S';
     if ($moneta === 0) {
         $count++;
     } else {
@@ -138,19 +138,96 @@ do {
 
 <h2 style="color:#EFA00B";>---------7 Uzduotis---------</h2>
 <?php
+
+$taskaiKazio = 0;
+$taskaiPetro = 0;
+$partijosNumeris = 1;
+
+
+
+$partija = true;
+do {
+    $kazys = rand(5, 25);
+    $petras = rand(10, 20);
+    echo "<span style='color:#EFA00B';> ". $partijosNumeris++ . " partijos rezultatai: </span>";
+    echo "Kazys: $kazys, Petras: $petras. ";
+    ($kazys > $petras) ? print "Partiją laimėjo: ​Kazys" : print "Partiją laimėjo: ​Petras";
+    $taskaiKazio += $kazys;
+    $taskaiPetro += $petras;
+    if ($taskaiKazio > 221) {
+        $partija = false;
+        echo "<span style='color:red';>  Žaidimą laimėjo Kazys: $taskaiKazio </span>";
+    } elseif ($taskaiPetro > 221) {
+        $partija = false;
+        echo "<span style='color:red';> Žaidimą laimėjo Petras: $taskaiPetro </span>";
+    }
+} while ($partija);
+
 ?>
 
 
 <h2 style="color:#0267C1";>---------8 Uzduotis---------</h2>
 <?php
+$eiluciuKiekis = 21;
+$apatinisTrikampis = ($eiluciuKiekis-1) / 2; //10
+$virsutinisTrikampis = $eiluciuKiekis - $apatinisTrikampis; //11
+$a= 0;
+$b = 11;
+
+
+for($j = 0; $j < $virsutinisTrikampis; $j++) {
+  echo str_repeat("<span>&nbsp;</span>", $b); //10, 9, 8
+  $b--;
+  for($i = 1; $i <= $j; $i++) {
+    $randR = rand(0, 255);
+    $randG = rand(0, 255);
+    $randB = rand(0, 255);
+
+    echo "<span style='font-size: 20px; color:rgb($randR, $randG, $randB);'>*</span>";
+  }
+  echo "<br>";
+}
+
+for( $j = 0; $j <= $apatinisTrikampis; $j++) {
+  echo str_repeat("<span>&nbsp;</span>", $a); //0, 1, 2
+  $a++;
+  for($i = $apatinisTrikampis-$j; $i >= 0; $i--) {
+    $randR = rand(0, 255);
+    $randG = rand(0, 255);
+    $randB = rand(0, 255);
+
+    echo "<span style='font-size: 20px; color:rgb($randR, $randG, $randB);'>*</span>";
+  }
+  echo "<br>";
+}
 ?>
 
 
 
 <h2 style="color:#0075C4";>---------9 Uzduotis---------</h2>
 <?php
+
+$pirmoPradzia= microtime(true);
+for($i = 0; $i < 1000000; $i++) {
+    $c = "10 bezdzioniu \n suvalge 20 bananu.";
+}
+$pirmoPabaiga = microtime(true);
+$pirmasUztruko = $pirmoPabaiga - $pirmoPradzia;
+
+$antroPradzia = microtime(true);
+for($i = 0; $i < 1000000; $i++) {
+    $c = '10 bezdzioniu \n suvalge 20 bananu.';
+}
+$antroPabaiga = microtime(true);
+$antrasUztruko = $antroPabaiga - $antroPradzia;
+
+echo 'Pirmo kabutes uztruko: ' . $pirmasUztruko . '<br> Antros kabutes uztruko: ' . $antrasUztruko . '<br>';
+echo $antrasUztruko > $pirmasUztruko ? 'dvigubos kabutes spausdinasi ilgiau' : 'viengubo kabutes spausdinasi ilgiau';
 ?>
 
 <h2 style="color:#EFA00B";>---------10 Uzduotis---------</h2>
 <?php
+
+
+
 ?>
