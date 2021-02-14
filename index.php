@@ -228,6 +228,136 @@ echo $antrasUztruko > $pirmasUztruko ? 'dvigubos kabutes spausdinasi ilgiau' : '
 <h2 style="color:#EFA00B";>---------10 Uzduotis---------</h2>
 <?php
 
+echo "1) “Įkalkite” 5 vinis mažais smūgiais: <br>";
+$kiekSulindo1 = 0;
+$kiekSulindo2 = 0;
+$kiekSulindo3 = 0;
+$kiekSulindo4 = 0;
+$kiekSulindo5 = 0;
 
+$kiekSmugiu1 = 0;
+$kiekSmugiu2 = 0;
+$kiekSmugiu3 = 0;
+$kiekSmugiu4 = 0;
+$kiekSmugiu5 = 0;
+$kalimas = true;
 
+while ($kalimas)
+{
+    if($kiekSulindo1 <= 85) {
+        $vinis1 = rand(5, 20);
+        $kiekSulindo1 += $vinis1;
+        $kiekSmugiu1++;
+    }
+
+    if($kiekSulindo2 <= 85) {
+        $vinis2 = rand(5, 20);
+        $kiekSulindo2 += $vinis2;
+        $kiekSmugiu2++;
+    }
+
+    if($kiekSulindo3 <= 85) {
+        $vinis3 = rand(5, 20);
+        $kiekSulindo3 += $vinis3;
+        $kiekSmugiu3++;
+    }
+
+    if($kiekSulindo4 <= 85) {
+        $vinis4 = rand(5, 20);
+        $kiekSulindo4 += $vinis4;
+        $kiekSmugiu4++;
+    }
+
+    if($kiekSulindo5 <= 85) {
+        $vinis5 = rand(5, 20);
+        $kiekSulindo5 += $vinis5;
+        $kiekSmugiu5++;
+    }
+    if($kiekSulindo1 > 84 && $kiekSulindo2 > 84 && $kiekSulindo3 > 84 && $kiekSulindo4 > 84 && $kiekSulindo5 > 84) {
+        $kalimas = false;
+    }
+
+} 
+
+echo "1 sulindo: $kiekSulindo1 mm, o smugiu: $kiekSmugiu1 <br> 2 sulindo: $kiekSulindo2 mm, o smugiu: $kiekSmugiu2 <br> 3 sulindo: $kiekSulindo3 mm,
+ o smugiu: $kiekSmugiu3 <br> 4 sulindo: $kiekSulindo4 mm, o smugiu: $kiekSmugiu4 <br> 5 sulindo: $kiekSulindo5 mm, o smugiu: $kiekSmugiu5";
+echo "<br><br> 2)“Įkalkite” 5 vinis dideliais smūgiais: <br>";
+
+$dideliKiekSulindo1 = 0;
+$dideliKiekSulindo2 = 0;
+$dideliKiekSulindo3 = 0;
+$dideliKiekSulindo4 = 0;
+$dideliKiekSulindo5 = 0;
+
+$dideliKiekSmugiu1 = 0;
+$dideliKiekSmugiu2 = 0;
+$dideliKiekSmugiu3 = 0;
+$dideliKiekSmugiu4 = 0;
+$dideliKiekSmugiu5 = 0;
+$kalimas2 = true;
+
+while ($kalimas2)
+{
+    if($dideliKiekSulindo1 <= 85) {
+        $vinis1 = rand(20, 30);
+        $chance = rand(0, 1);
+        if ($chance === 0) {
+            $dideliKiekSulindo1 += $vinis1;
+            $dideliKiekSmugiu1++;
+        } else {
+            $dideliKiekSmugiu1++;
+        }
+    }
+
+    if($dideliKiekSulindo2 <= 85) {
+        $vinis2 = rand(20, 30);
+        $chance = rand(0, 1);
+        if ($chance === 0) {
+            $dideliKiekSulindo2 += $vinis2;
+            $dideliKiekSmugiu2++;
+        } else {
+            $dideliKiekSmugiu2++;
+        }
+    }
+
+    if($dideliKiekSulindo3 <= 85) {
+        $vinis3 = rand(20, 30);
+        $chance = rand(0, 1);
+        if ($chance === 0) {
+            $dideliKiekSulindo3 += $vinis3;
+            $dideliKiekSmugiu3++;
+        } else {
+        $dideliKiekSmugiu3++;
+        }
+    }
+
+    if($dideliKiekSulindo4 <= 85) {
+        $vinis4 = rand(20, 30);
+        $chance = rand(0, 1);
+        if ($chance === 0) {
+            $dideliKiekSulindo4 += $vinis4;
+            $dideliKiekSmugiu4++;
+        } else {
+        $dideliKiekSmugiu4++;
+        }
+    }
+
+    if($dideliKiekSulindo5 <= 85) {
+        $vinis5 = rand(20, 30);
+        $chance = rand(0, 1);
+        if ($chance === 0) {
+        $dideliKiekSulindo5 += $vinis5;
+        $dideliKiekSmugiu5++;
+        } else{
+            $dideliKiekSmugiu5++;
+        }
+    }
+    if($dideliKiekSulindo1 > 84 && $dideliKiekSulindo2 > 84 && $dideliKiekSulindo3 > 84 && $dideliKiekSulindo4 > 84 && $dideliKiekSulindo5 > 84) {
+        $kalimas2 = false;
+    }
+
+} 
+
+echo "1 sulindo: $dideliKiekSulindo1 mm, o smugiu: $dideliKiekSmugiu1 <br> 2 sulindo: $dideliKiekSulindo2 mm, o smugiu: $dideliKiekSmugiu2 <br> 3 sulindo: $dideliKiekSulindo3 mm,
+ o smugiu: $dideliKiekSmugiu3 <br> 4 sulindo: $dideliKiekSulindo4 mm, o smugiu: $dideliKiekSmugiu4 <br> 5 sulindo: $dideliKiekSulindo5 mm, o smugiu: $dideliKiekSmugiu5";
 ?>
