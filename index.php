@@ -364,6 +364,36 @@ echo "1 sulindo: $dideliKiekSulindo1 mm, o smugiu: $dideliKiekSmugiu1 <br> 2 sul
 
 <h2 style="color:#0075C4";>---------11 Uzduotis---------</h2>
 <?php
+# Sugeneruokite stringą, kurį sudarytų 50 atsitiktinių skaičių nuo 1 iki 200, atskirtų tarpais.
+# Skaičiai turi būti unikalūs (t.y. nesikartoti). Sugeneruokite antrą stringą, pasinaudodami pirmu, palikdami
+# jame tik pirminius skaičius (t.y tokius, kurie dalinasi be liekanos tik iš 1 ir patys savęs). Skaičius stringe
+# sudėliokite didėjimo tvarka, nuo mažiausio iki didžiausio.
 
+$skaiciuMasyvas = [];
 
+while (count($skaiciuMasyvas) < 50){  //count all elements in array
+    $skaicius = rand(1, 200);
+    if (!in_array($skaicius, $skaiciuMasyvas)){ //Checks if a value exists in an array
+        array_push($skaiciuMasyvas, $skaicius); //if no, supushinama
+    }
+}
+
+$stringas = implode(' ', $skaiciuMasyvas); //Join array elements with a string
+echo "<br><br>$stringas<br><br>";
+$pirminiuSkaiciuMasyvas = [];
+for ($i = 0; $i < 50; $i++){
+    $daliniuCount = 0;
+    for($j = 1; $j <= $skaiciuMasyvas[$i]; $j++){
+        if ($skaiciuMasyvas[$i] % $j === 0){
+            $daliniuCount++;
+        }
+    }
+    if($daliniuCount < 3){
+        $pirminis = $skaiciuMasyvas[$i];
+        array_push($pirminiuSkaiciuMasyvas, $pirminis);
+    }
+}
+sort($pirminiuSkaiciuMasyvas);
+$pirminiuSkStringas = implode(' ', $pirminiuSkaiciuMasyvas);
+echo "<br><br>$pirminiuSkStringas<br><br>";
 ?>
