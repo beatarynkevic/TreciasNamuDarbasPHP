@@ -1,4 +1,7 @@
 <h2 style="color:#EFA00B";>---------1 Uzduotis---------</h2>
+<!-- Naršyklėje nupieškite linija iš 400 “*”. 
+a) Naudodami css stilių “suskaldykite” liniją taip, kad visos žvaigždutės matytųsi ekrane;
+b) Programiškai “suskaldykite” žvaigždutes taip, kad vienoje eilutėje nebūtų daugiau nei 50 “*”; -->
 
 <?php
 $visoSimboliu = str_repeat('*', 400);
@@ -14,6 +17,9 @@ echo '<br><br>';
 ?>
 
 <h2 style="color:#0267C1";>---------2 Uzduotis---------</h2>
+<!-- Sugeneruokit 300 atsitiktinių skaičių nuo 0 iki 300, atspausdinkite juos atskirtus tarpais ir suskaičiuokite kiek tarp jų yra didesnių už 150.
+Skaičiai didesni nei 275 turi būti raudonos spalvos. -->
+
 <?php
 
 $kiekSkaiciu = 300;
@@ -35,6 +41,9 @@ for ($i = 0; $i <= $kiekSkaiciu; $i++) {
 
 
 <h2 style="color:#0075C4";>---------3 Uzduotis---------</h2>
+<!-- Vienoje eilutėje atspausdinkite visus skaičius nuo 1 iki atsitiktinio skaičiaus tarp 3000 - 4000 pvz(aibė nuo 1 iki 3476), kurie dalijasi iš
+ 77 be liekanos. Skaičius atskirkite kableliais. Po paskutinio skaičiaus kablelio neturi būti. Jeigu reikia, panaudokite css, kad visi
+ rezultatai matytųsi ekrane. -->
 <?php
 
 $atsitiktinisSkaicius = rand(3000, 4000);
@@ -47,10 +56,26 @@ for ($i = 1; $i <= $atsitiktinisSkaicius; $i ++) {
 }
 echo substr($stringas, 0, (mb_strlen($stringas) - 2));
 echo '<br><br>';
+
+//Kitoks sprendimo budas:
+
+// echo'Antras varinatas sprendimo: <br>';
+// $random2 = rand(3000, 4000);
+// $ats = "77";
+// for($i = $ats + 1; $i < $random2; $i++) {
+//     if($i % 77 == 0) {
+//         $ats .= ","."<span>$i</span>;
+//     }
+// }
+// echo $ats;
+// echo '<br><br>';
 ?>
 
 
 <h2 style="color:#EFA00B";>---------4 Uzduotis---------</h2>
+<!-- Nupieškite kvadratą iš “*”, kurio kraštines sudaro 100 “*”. Panaudokite css stilių, kad kvadratas ekrane atrodytų kvadratinis. -->
+
+
 <?php
 for ($i = 0; $i <= 30; $i++) {
     for($j = 0; $j <= 30; $j++) {
@@ -61,6 +86,8 @@ for ($i = 0; $i <= 30; $i++) {
 ?>
 
 <h2 style="color:#0267C1";>---------5 Uzduotis---------</h2>
+<!-- Prieš tai nupieštam kvadratui nupieškite raudonas istrižaines. -->
+
 <?php
 $length = 30;
 for ($i = 0; $i <= $length; $i++) {
@@ -78,6 +105,14 @@ for ($i = 0; $i <= $length; $i++) {
 
 
 <h2 style="color:#0075C4";>---------6 Uzduotis---------</h2>
+<!-- Metam monetą. Monetos kritimo rezultatą imituojam rand() funkcija, kur 0 yra herbas, o 1 - skaičius.
+Monetos metimo rezultatus išvedame į ekraną atskiroje eilutėje: “S” jeigu iškrito skaičius ir “H” jeigu herbas.
+Suprogramuokite keturis skirtingus scenarijus kai monetos metimą stabdome:
+A) Iškritus herbui;
+B) ris kartus iškritus herbui;
+C) Tris kartus iš eilės iškritus herbui; -->
+
+
 <?php
 //0 -yra herbas
 //1 -yra skaicius
@@ -137,6 +172,11 @@ do {
 ?>
 
 <h2 style="color:#EFA00B";>---------7 Uzduotis---------</h2>
+<!-- Kazys ir Petras žaidžiai šaškėm. Petras surenka taškų kiekį nuo 10 iki 20, Kazys surenka taškų kiekį nuo 5 iki 25.
+Vienoje eilutėje išvesti žaidėjų vardus su taškų kiekiu ir “Partiją laimėjo: ​laimėtojo vardas​”. Taškų kiekį generuokite funkcija ​rand()​.
+Žaidimą laimi tas, kas greičiau surenka 222 taškus.
+Partijas kartoti tol, kol kažkuris žaidėjas pirmas surenka 222 arba daugiau taškų. -->
+
 <?php
 
 $taskaiKazio = 0;
@@ -167,6 +207,10 @@ do {
 
 
 <h2 style="color:#0267C1";>---------8 Uzduotis---------</h2>
+<!-- Reikia nupaišyti pilnavidurį rombą, taip pat, kaip ir pilnavidurį kvadratą (https://lt.wikipedia.org/wiki/Rombas), kurio aukštis 21 eilutė.
+Reikia padaryti, kad kiekviena rombo žvaigždutė būtų atsitiktinės RGB spalvos (perkrovus puslapį spalvos turi keistis). -->
+
+
 <?php
 $eiluciuKiekis = 21;
 $apatinisTrikampis = ($eiluciuKiekis-1) / 2; //10
@@ -205,6 +249,13 @@ for( $j = 0; $j <= $apatinisTrikampis; $j++) {
 
 
 <h2 style="color:#0075C4";>---------9 Uzduotis---------</h2>
+<!-- Panaudokite funkciją microtime(). Paskaičiuokite kiek sekundžių užtruks kodą:
+$c = "10 bezdzioniu \n suvalge 20 bananu.";
+Įvykdyti 1 milijoną kartų ir palyginkite kiek užtruks įvykdyti kodą: 
+$c = '10 bezdzioniu \n suvalge 20 bananu.';
+(Stringas viengubose ir dvigubose kabutėse) -->
+
+
 <?php
 
 $pirmoPradzia= microtime(true);
@@ -226,6 +277,11 @@ echo $antrasUztruko > $pirmasUztruko ? 'dvigubos kabutes spausdinasi ilgiau' : '
 ?>
 
 <h2 style="color:#EFA00B";>---------10 Uzduotis---------</h2>
+<!-- Sumodeliuokite vinies kalimą. Įkalimo gylį sumodeliuokite pasinaudodami rand() funkcija. Vinies ilgis 8.5cm (pilnai sulenda į lentą).
+“Įkalkite” 5 vinis mažais smūgiais. Vienas smūgis vinį įkala 5-20 mm. Suskaičiuokite kiek reikia smūgių.
+“Įkalkite” 5 vinis dideliais smūgiais. Vienas smūgis vinį įkala 20-30 mm, bet yra 50% tikimybė (pasinaudokite rand() funkcija tikimybei sumodeliuoti), kad smūgis nepataikys į vinį. Suskaičiuokite kiek reikia smūgių. -->
+
+
 <?php
 
 echo "1) “Įkalkite” 5 vinis mažais smūgiais: <br>";
